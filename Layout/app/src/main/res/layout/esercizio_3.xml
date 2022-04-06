@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mettere una view centrata nello schermo con al suo interno un'altra view centrata -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="170dp"
+            android:background="#f00"
+            android:layout_centerInParent="true">
+            <View
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="#adc145"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ - testo lungo su più righe
+- sfondo colorato del testo
+- testo di dimensione 20dp
+- colore del testo bianco
+- opacità al 70%
+- max 1 riga, troncatura finale
+ -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget nisi imperdiet nisi elementum ornare posuere vitae justo. Quisque euismod euismod turpis, sollicitudin tincidunt massa. Sed sed mauris. "
+        android:alpha="0.7"
+        android:maxLines="2"
+        android:eli
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

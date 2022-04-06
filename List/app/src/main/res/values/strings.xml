@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">List</string>
+    <string name="app_description">List of items</string>
+    <string name="app_version">Version: %s</string>
+    <string name="delete_dialog_title">Delete item</string>
+    <string name="delete_dialog_text">Do you want to remove this item?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Animated Login</string>
+    <string name="login_error">Credenziali non corrette</string>
+</resources>

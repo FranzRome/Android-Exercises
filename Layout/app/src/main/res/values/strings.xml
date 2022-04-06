@@ -1,0 +1,29 @@
+<resources>
+    <string name="text_1">Text view 1</string>
+    <string name="text_2">Text view 2</string>
+    <string name="go_back">Go back</string>
+    <string name="share">Share</string>
+    <string name="favourite">Favourite</string>
+    <string name="restaurant">A restaurant</string>
+    <string name="title">Il Cavallo Pazzo</string>
+    <string name="location">Via dei Matti N.0</string>
+    <string name="info">Info</string>
+    <string name="lorem">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Fusce auctor velit a efficitur facilisis. Cras et posuere nisi, et auctor est.
+        Morbi luctus enim a ipsum rutrum scelerisque.
+        Nulla cursus, ligula in ultrices elementum, nisi augue ultrices nisi, vitae convallis ligula felis at neque.
+        Vivamus feugiat odio et nibh ullamcorper facilisis. Duis posuere tincidunt interdum.
+        Maecenas dapibus, sem sed pretium condimentum, risus neque porta sapien, quis rhoncus ante eros congue neque.
+        In vel enim nec ex aliquam tincidunt. Morbi maximus ante non euismod efficitur. Fusce in semper urna.
+        Sed id felis volutpat, varius ex et, tristique risus. Sed ut arcu sed arcu cursus tempus ut sed ante.
+        Donec vitae tortor mattis, aliquam lacus non, molestie justo.
+        Nulla pulvinar ipsum dolor, in posuere lacus feugiat nec.
+
+        Ut pulvinar diam vitae neque lacinia, at consequat lacus blandit.
+        Fusce at dictum augue. Phasellus molestie ante a ante tincidunt, vitae pretium lorem auctor.
+        Phasellus vitae mollis orci. Etiam sodales cursus arcu et efficitur. Maecenas sed feugiat dui.
+        Vestibulum pulvinar ex ut quam facilisis ornare. Integer posuere pellentesque erat.
+        Vivamus ac aliquam arcu, nec scelerisque lacus.
+    </string>
+</resources>

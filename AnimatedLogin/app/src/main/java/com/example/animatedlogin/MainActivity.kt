@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             if(mailInput.text.toString() == email && passwordInput.text.toString() == password){
                 val intent = Intent(this, Profile::class.java)
                 startActivity(intent)
-                overridePendingTransition(R.anim.transition, R.anim.nothing)
+                overridePendingTransition(R.anim.transition, R.anim.fade_out)
             } else {
                 Snackbar.make(contextView, R.string.login_error, Snackbar.LENGTH_SHORT)
                     .show()

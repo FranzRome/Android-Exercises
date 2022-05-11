@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.activity.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firebase.model.Product
@@ -23,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var addProductButton: Button
     private lateinit var productsList: RecyclerView
 
+    private val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,7 +39,17 @@ class MainActivity : AppCompatActivity() {
         addProductButton = findViewById(R.id.addProductButton)
         productsList = findViewById(R.id.productsList)
 
-        getProduct()
+        // Create the observer which updates the UI.
+        val nameObserver = Observer<ArrayList<Product>> { newList: ArrayList<Product> ->
+            // Update the UI, in this case, a TextView.
+            productsList.apply {
+                adapter = ProductAdapter(newList, this@MainActivity)
+                layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
+            }
+        }
+
+        // Observe the LiveData, passing in this activity as the LifecycleOwner and the observer.
+        viewModel.products.observe(this, nameObserver)
 
         updateButton.setOnClickListener {
             db.collection("users").whereEqualTo("first", "Ada")
@@ -52,25 +66,35 @@ class MainActivity : AppCompatActivity() {
         }
 
         addProductButton.setOnClickListener{
-            val product = hashMapOf(
-                "name" to productNameEditText.text.toString(),
-                "description" to productDescriptionEditText.text.toString()
-            )
-
-            db.collection("products")
-                .add(product)
-                .addOnSuccessListener { documentReference ->
-                    Log.d("Firebase", "DocumentSnapshot added with ID: ${documentReference.id}")
-                    getProduct()
-                }
-                .addOnFailureListener { e ->
-                    Log.w("Firebase", "Error adding document", e)
-                }
+            addProduct()
         }
+
+        loadProducts()
     }
 
-    private fun getProduct(){
-        var products = ArrayList<Product>()
+    private fun addProduct(){
+        // Commented code does the same things without viewModel
+        /*val product = hashMapOf(
+            "name" to productNameEditText.text.toString(),
+            "description" to productDescriptionEditText.text.toString()
+        )
+
+        db.collection("products")
+            .add(product)
+            .addOnSuccessListener { documentReference ->
+                Log.d("Firebase", "DocumentSnapshot added with ID: ${documentReference.id}")
+                loadProducts()
+            }
+            .addOnFailureListener { e ->
+                Log.w("Firebase", "Error adding document", e)
+            }*/
+
+        viewModel.addProduct(productNameEditText.text.toString(), productDescriptionEditText.text.toString())
+    }
+
+    private fun loadProducts(){
+        // Commented code does the same things without viewModel
+        /*var products = ArrayList<Product>()
 
         db.collection("products")
             .get()
@@ -89,9 +113,9 @@ class MainActivity : AppCompatActivity() {
             }
             .addOnFailureListener { exception ->
                 Log.w("Firebase", "Error getting documents.", exception)
-            }
+            }*/
 
-
+            viewModel.loadProducts()
     }
 
 }

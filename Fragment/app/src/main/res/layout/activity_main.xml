@@ -40,8 +40,9 @@
         android:layout_marginBottom="16dp"
         android:text="Add Fragment"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_editor_absoluteX="100dp"
-        app:layout_editor_absoluteY="500dp"
-        tools:layout_editor_absoluteX="100dp"></Button>
+        app:layout_editor_absoluteY="500dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
